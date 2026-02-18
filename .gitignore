@@ -1,0 +1,35 @@
+# Core ML models (not tracked, no LFS)
+*.mlmodel
+*.mlpackage
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# IDE / editor
+.idea/
+*.swp
+*.swo
+*~
+
+# Python (if you add conversion scripts later)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Jupyter (if you add notebooks)
+.ipynb_checkpoints/
+
+# Misc
+*.log
+Thumbs.db
