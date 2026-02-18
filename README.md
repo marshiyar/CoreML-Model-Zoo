@@ -51,16 +51,16 @@ Models live in `**RealESRGAN_x2/`** and `**RealESRGAN_x4/`**.
 
 | Model                                  | Size    | Input            | Output   | Notes                                 |
 | -------------------------------------- | ------- | ---------------- | -------- | ------------------------------------- |
-| `RealESRGAN_x2plus.mlpackage`          | 33 MB   | Image            | Image 2× | Base 2× upscale                       |
-| `RealESRGAN_x2plus_flex.mlpackage`     | 33 MB   | Image (flex)     | Image 2× | Flexible input size                   |
-| `RealESRGAN_x2plus_flex1280.mlpackage` | 33 MB   | Image (max 1280) | Image 2× | Flex, max side 1280                   |
-| `RealESRGAN_x2plus_pruned.mlpackage`   | 33 MB   | Image            | Image 2× | Pruned (smaller)                      |
-| `RealESRGAN_x2plus_quant8.mlpackage`   | 17 MB   | Image            | Image 2× | INT8 quantized                        |
-| `RealESRGAN_x2plus_pal4.mlpackage`     | 9 MB    | Image            | Image 2× | Palette (4-bit)                       |
-| `RealESRGAN_x2plus_pal6.mlpackage`     | 13 MB   | Image            | Image 2× | Palette (6-bit)                       |
-| `RealESRGAN_x2plus_pal8.mlpackage`     | 17 MB   | Image            | Image 2× | Palette (8-bit)                       |
-| `RealESRGAN_x2plus_flex1280_`*         | 9–33 MB | Image (max 1280) | Image 2× | Flex1280 + pruned / quant8 / pal4/6/8 |
-| `RealESRGAN_x2_wrapped.mlpackage`      | 33 MB   | Image            | Image 2× | Wrapped variant                       |
+| `RealESRGAN_x2plus.mlpackage`          | 33 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />            | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | Base 2× upscale                       |
+| `RealESRGAN_x2plus_flex.mlpackage`     | 33 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />      | Image 2× | Flexible input size                   |
+| `RealESRGAN_x2plus_flex1280.mlpackage` | 33 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />  | Image 2× | Flex, max side 1280                   |
+| `RealESRGAN_x2plus_pruned.mlpackage`   | 33 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />             | Image 2× | Pruned (smaller)                      |
+| `RealESRGAN_x2plus_quant8.mlpackage`   | 17 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />             | Image 2× | INT8 quantized                        |
+| `RealESRGAN_x2plus_pal4.mlpackage`     | 9 MB    | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />             | Image 2× | Palette (4-bit)                       |
+| `RealESRGAN_x2plus_pal6.mlpackage`     | 13 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />             | Image 2× | Palette (6-bit)                       |
+| `RealESRGAN_x2plus_pal8.mlpackage`     | 17 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />             | Image 2× | Palette (8-bit)                       |
+| `RealESRGAN_x2plus_flex1280_`*         | 9–33 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />  | Image 2× | Flex1280 + pruned / quant8 / pal4/6/8 |
+| `RealESRGAN_x2_wrapped.mlpackage`      | 33 MB   | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" />             | Image 2× | Wrapped variant                       |
 
 
 ### RealESRGAN ×4
