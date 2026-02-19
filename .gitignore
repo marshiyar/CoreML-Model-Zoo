@@ -49,3 +49,6 @@ Thumbs.db
 .DS_Store
 Models-List/.DS_Store
 Models-List/RealESRGAN_x4/.DS_Store
+
+*.csv
+realesrgan4xReport.csv
