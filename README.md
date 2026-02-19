@@ -1,15 +1,13 @@
 # CoreML-Model-Zoo
 
-A curated collection of Core ML (`.mlpackage`) models
+A curated collection of CoreML (`.mlpackage`) models
 All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS, and visionOS.
-
 
 ## Quick start
 
 1. You can find each model linked to its realease direct link or navigate to "Releases" and select your wanted Model
-2. Drag the target `.mlpackage` folder into your Xcode app.
 
-Each model’s license follows its original upstream project (linked in each section).
+Each model’s license follows its original upstream project (linked in the Footnotes).
 
 <a id="contents"></a>
 <details>
@@ -25,11 +23,11 @@ Each model’s license follows its original upstream project (linked in each sec
 # Super Resolution
 
 ## Real-ESRGAN
-Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
 
 Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 
 ### RealESRGAN x2
+
 <details>
 <summary><strong>Model contract</strong></summary>
 
@@ -40,7 +38,6 @@ Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 
 </details>
 
-
 | Model ID | Size | Input | Output | Profile |
 | --------------------------------------- | ------- | ----- | ------ | ------- |
 | <code>RealESRGAN_<wbr>x2plus</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/input_images/RealESRGAN_x2_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus.png?raw=true" width="120" /> | base |
@@ -48,7 +45,6 @@ Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 | <code>RealESRGAN_<wbr>x2plus_<wbr>pal6</code> | 12.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal6.png?raw=true" width="120" /> | pal6 |
 | <code>RealESRGAN_<wbr>x2plus_<wbr>pal-8</code> | 16.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal-8.png?raw=true" width="120" /> | pal-8 |
 | <code>RealESRGAN_<wbr>x2plus_<wbr>Q-4</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_Q-4.png?raw=true" width="120" /> | Q-4 |
-
 
 ### RealESRGAN x4
 
@@ -61,19 +57,18 @@ Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 
 </details>
 
-
 | Model ID | Size | Input | Output | Profile |
 | ----------------------------------- | ------- | ----- | ------ | ------- |
 | <code>RealESRGAN_<wbr>x4</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | base |
 | <code>RealESRGAN_<wbr>x4_<wbr>pal4</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | pal4 |
 | <code>RealESRGAN_<wbr>x4_<wbr>Q-4</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_Q-4.png?raw=true" width="120" /> | Q-4 |
 
-
 ---
 
 # Image Denoising
 
 ## NAFNet
+
 Image denoising with NAFNet (SIDD-trained, width 64). Original: [megvii-research/NAFNet](https://github.com/megvii-research/NAFNet).
 
 Models live in `Models-List/NAFNet_SIDD_width64/`.
@@ -82,7 +77,7 @@ Models live in `Models-List/NAFNet_SIDD_width64/`.
 <summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** `1x3x512x512 -> 1x3x512x512`
-- **Core ML type:** `mlProgram`
+- **CoreML type:** `mlProgram`
 - **Filename mapping:** `<model_id>.mlpackage`
 
 </details>
@@ -102,7 +97,6 @@ Models live in `Models-List/NAFNet_SIDD_width64/`.
 # Image Colorization
 
 ## DDColor
-Grayscale image colorization. ModelScope variant. Original: [piddnad/DDColor](https://github.com/piddnad/DDColor).
 
 Models live in `Models-List/DDColor/`.
 
@@ -110,7 +104,6 @@ Models live in `Models-List/DDColor/`.
 <summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** <code>gray_rgb:1x3x512x512 -> ab:1x2x512x512</code>
-- **Core ML type:** <code>mlProgram</code>
 - **Filename mapping:** <code>&lt;model_id&gt;.mlpackage</code>
 
 </details>
@@ -132,8 +125,6 @@ Models live in `Models-List/DDColor/`.
 ---
 
 ## Image2Image (Anime2Sketch)
-
-Anime/style artwork to sketch conversion. Original: [Mukosame/Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) (MIT).
 
 Models live in `Models-List/anime2sketch/`.
 <details>
@@ -167,3 +158,9 @@ Thanks to the authors of Real-ESRGAN, NAFNet, DDColor, and Anime2Sketch for the 
 Arshiya Rahgozar  
 [GitHub](https://github.com/marshiyar)
 [LinkedIn](https://www.linkedin.com/in/marshiyar/)
+
+### Footnotes
+
+Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
+Anime/style artwork to sketch conversion. Original: [Mukosame/Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) (MIT).
+Grayscale image colorization. ModelScope variant. Original: [piddnad/DDColor](https://github.com/piddnad/DDColor).
