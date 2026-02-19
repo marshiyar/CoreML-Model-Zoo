@@ -85,22 +85,22 @@ I/O contract summary:
 - Deployment target in this folder: `iOS16+`
 
 
-| Model                                         | Type        | Min target | I/O                              | Size    | Input | Output | Notes                    |
-| --------------------------------------------- | ----------- | ---------- | -------------------------------- | ------- | ----- | ------ | ------------------------ |
-| `RealESRGAN_x2plus.mlpackage`                 | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 32.5 MB |       |        | Base 2x upscale          |
-| `RealESRGAN_x2plus_flex.mlpackage`            | `mlProgram` | iOS16+     | `1x3x[64..1024]^2 -> dynamic 2x` | 32.5 MB |       |        | Flexible input size      |
-| `RealESRGAN_x2plus_flex1280.mlpackage`        | `mlProgram` | iOS16+     | `1x3x[64..1280]^2 -> dynamic 2x` | 32.5 MB |       |        | Flex, max side 1280      |
-| `RealESRGAN_x2plus_pruned.mlpackage`          | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 32.5 MB |       |        | Pruned                   |
-| `RealESRGAN_x2plus_quant8.mlpackage`          | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 16.8 MB |       |        | INT8 quantized           |
-| `RealESRGAN_x2plus_pal4.mlpackage`            | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 8.7 MB  |       |        | Palette 4-bit            |
-| `RealESRGAN_x2plus_pal6.mlpackage`            | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 12.7 MB |       |        | Palette 6-bit            |
-| `RealESRGAN_x2plus_pal8.mlpackage`            | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 16.9 MB |       |        | Palette 8-bit            |
-| `RealESRGAN_x2plus_flex1280_pruned.mlpackage` | `mlProgram` | iOS16+     | `1x3x[64..1280]^2 -> dynamic 2x` | 32.5 MB |       |        | Flex1280 + pruned        |
-| `RealESRGAN_x2plus_flex1280_quant8.mlpackage` | `mlProgram` | iOS16+     | `1x3x[64..1280]^2 -> dynamic 2x` | 16.8 MB |       |        | Flex1280 + INT8          |
-| `RealESRGAN_x2plus_flex1280_pal4.mlpackage`   | `mlProgram` | iOS16+     | `1x3x[64..1280]^2 -> dynamic 2x` | 8.7 MB  |       |        | Flex1280 + palette 4-bit |
-| `RealESRGAN_x2plus_flex1280_pal6.mlpackage`   | `mlProgram` | iOS16+     | `1x3x[64..1280]^2 -> dynamic 2x` | 12.7 MB |       |        | Flex1280 + palette 6-bit |
-| `RealESRGAN_x2plus_flex1280_pal8.mlpackage`   | `mlProgram` | iOS16+     | `1x3x[64..1280]^2 -> dynamic 2x` | 16.8 MB |       |        | Flex1280 + palette 8-bit |
-| `RealESRGAN_x2_wrapped.mlpackage`             | `pipeline`  | iOS16+     | `1x3x256x256 -> 1x3x512x512`     | 32.5 MB |       |        | Wrapped pipeline variant |
+| Model                                         | I/O                              | Size    | Input | Output | Notes                    |
+| --------------------------------------------- | -------------------------------- | ------- | ----- | ------ | ------------------------ |
+| <code>RealESRGAN_<wbr>x2plus.<wbr>mlpackage</code>                 | `1x3x256x256 -> 1x3x512x512`     | 32.5 MB |       |        | Base 2x upscale          |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex.<wbr>mlpackage</code>            | `1x3x[64..1024]^2 -> dynamic 2x` | 32.5 MB |       |        | Flexible input size      |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280.<wbr>mlpackage</code>        | `1x3x[64..1280]^2 -> dynamic 2x` | 32.5 MB |       |        | Flex, max side 1280      |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pruned.<wbr>mlpackage</code>          | `1x3x256x256 -> 1x3x512x512`     | 32.5 MB |       |        | Pruned                   |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>quant8.<wbr>mlpackage</code>          | `1x3x256x256 -> 1x3x512x512`     | 16.8 MB |       |        | INT8 quantized           |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pal4.<wbr>mlpackage</code>            | `1x3x256x256 -> 1x3x512x512`     | 8.7 MB  |       |        | Palette 4-bit            |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pal6.<wbr>mlpackage</code>            | `1x3x256x256 -> 1x3x512x512`     | 12.7 MB |       |        | Palette 6-bit            |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pal8.<wbr>mlpackage</code>            | `1x3x256x256 -> 1x3x512x512`     | 16.9 MB |       |        | Palette 8-bit            |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280_<wbr>pruned.<wbr>mlpackage</code> | `1x3x[64..1280]^2 -> dynamic 2x` | 32.5 MB |       |        | Flex1280 + pruned        |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280_<wbr>quant8.<wbr>mlpackage</code> | `1x3x[64..1280]^2 -> dynamic 2x` | 16.8 MB |       |        | Flex1280 + INT8          |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280_<wbr>pal4.<wbr>mlpackage</code>   | `1x3x[64..1280]^2 -> dynamic 2x` | 8.7 MB  |       |        | Flex1280 + palette 4-bit |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280_<wbr>pal6.<wbr>mlpackage</code>   | `1x3x[64..1280]^2 -> dynamic 2x` | 12.7 MB |       |        | Flex1280 + palette 6-bit |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280_<wbr>pal8.<wbr>mlpackage</code>   | `1x3x[64..1280]^2 -> dynamic 2x` | 16.8 MB |       |        | Flex1280 + palette 8-bit |
+| <code>RealESRGAN_<wbr>x2_<wbr>wrapped.<wbr>mlpackage</code>             | `1x3x256x256 -> 1x3x512x512`     | 32.5 MB |       |        | Wrapped pipeline variant |
 
 
 ### RealESRGAN x4
@@ -111,18 +111,15 @@ I/O contract summary:
 - Base package is `iOS15+` (`spec6`); compressed/slim variants are `iOS16+` (`spec7`)
 
 
-| Model                                             | Type        | Min target | I/O                            | Size    | Input | Output | Notes                              |
-| ------------------------------------------------- | ----------- | ---------- | ------------------------------ | ------- | ----- | ------ | ---------------------------------- |
-| `RealESRGAN_x4.mlpackage`                         | `mlProgram` | iOS15+     | `1x3x256x256 -> 1x3x1024x1024` | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | Base 4x upscale                    |
-| `RealESRGAN_x4_slim.mlpackage`                    | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 16.8 MB |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_slim.png?raw=true" width="120" /> | Slim architecture                  |
-| `RealESRGAN_x4_slimmer.mlpackage`                 | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 8.8 MB  |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_slimmer.png?raw=true" width="120" /> | Slimmer architecture               |
-| `RealESRGAN_x4_pruned.mlpackage`                  | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 32.5 MB |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pruned.png?raw=true" width="120" /> | Pruned                             |
-| `RealESRGAN_x4_quant8.mlpackage`                  | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 16.8 MB |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | INT8 quantized                     |
-| `RealESRGAN_x4_pal4.mlpackage`                    | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 8.8 MB  |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | Palette 4-bit                      |
-| `RealESRGAN_x4_arch_b8_nf48_gc24_xcode.mlpackage` | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 6.6 MB  |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_arch_b8_xcode.png?raw=true" width="120" /> | Architecture-slim (`b8,nf48,gc24`) |
-| `RealESRGAN_x4_arch_b6_nf40_gc20_xcode.mlpackage` | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 3.5 MB  |       |        | Architecture-slim (`b6,nf40,gc20`) |
-| `RealESRGAN_x4_iphone_fast.mlpackage`             | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 6.6 MB  |       |        | iPhone-focused fast variant        |
-| `RealESRGAN_x4_iphone_fast_quant8.mlpackage`      | `mlProgram` | iOS16+     | `1x3x256x256 -> 1x3x1024x1024` | 3.5 MB  |       |        | iPhone-fast + INT8                 |
+| Model                                             | I/O                            | Size    | Input | Output | Notes                              |
+| ------------------------------------------------- | ------------------------------ | ------- | ----- | ------ | ---------------------------------- |
+| <code>RealESRGAN_<wbr>x4.<wbr>mlpackage</code>                         | `1x3x256x256 -> 1x3x1024x1024` | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | Base 4x upscale                    |
+| <code>RealESRGAN_<wbr>x4_<wbr>slim.<wbr>mlpackage</code>                    | `1x3x256x256 -> 1x3x1024x1024` | 16.8 MB |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_slim.png?raw=true" width="120" /> | Slim architecture                  |
+| <code>RealESRGAN_<wbr>x4_<wbr>slimmer.<wbr>mlpackage</code>                 | `1x3x256x256 -> 1x3x1024x1024` | 8.8 MB  |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_slimmer.png?raw=true" width="120" /> | Slimmer architecture               |
+| <code>RealESRGAN_<wbr>x4_<wbr>pruned.<wbr>mlpackage</code>                  | `1x3x256x256 -> 1x3x1024x1024` | 32.5 MB |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pruned.png?raw=true" width="120" /> | Pruned                             |
+| <code>RealESRGAN_<wbr>x4_<wbr>quant8.<wbr>mlpackage</code>                  | `1x3x256x256 -> 1x3x1024x1024` | 16.8 MB |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | INT8 quantized                     |
+| <code>RealESRGAN_<wbr>x4_<wbr>pal4.<wbr>mlpackage</code>                    | `1x3x256x256 -> 1x3x1024x1024` | 8.8 MB  |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | Palette 4-bit                      |
+| <code>RealESRGAN_<wbr>x4_<wbr>arch_<wbr>b8_<wbr>nf48_<wbr>gc24_<wbr>xcode.<wbr>mlpackage</code> | `1x3x256x256 -> 1x3x1024x1024` | 6.6 MB  |       | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_arch_b8_xcode.png?raw=true" width="120" /> | Architecture-slim (`b8,nf48,gc24`) |
 
 
 ---
@@ -139,24 +136,24 @@ I/O contract summary:
 - Type: `mlProgram`
 
 
-| Variant                                                | Type        | Min target | I/O                          | Size     | Input | Output | Notes                          |
-| ------------------------------------------------------ | ----------- | ---------- | ---------------------------- | -------- | ----- | ------ | ------------------------------ |
-| `NAFNet_SIDD_width64_512.mlpackage`                    | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 221.7 MB |       |        | Base                           |
-| `NAFNet_SIDD_width64_512_quant8.mlpackage`             | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 111.8 MB |       |        | INT8                           |
-| `NAFNet_SIDD_width64_512_ios18.mlpackage`              | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x3x512x512` | 221.7 MB |       |        | iOS 18 spec                    |
-| `NAFNet_SIDD_width64_512_ios18_quant4.mlpackage`       | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x3x512x512` | 56.7 MB  |       |        | iOS18, 4-bit quant             |
-| `NAFNet_SIDD_width64_512_ios18_pal3_kmeans.mlpackage`  | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x3x512x512` | 42.5 MB  |       |        | iOS18, 3-bit palette (kmeans)  |
-| `NAFNet_SIDD_width64_512_ios18_pal3_uniform.mlpackage` | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x3x512x512` | 42.5 MB  |       |        | iOS18, 3-bit palette (uniform) |
-| `NAFNet_SIDD_width64_512_pal1_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 14.9 MB  |       |        | 1-bit palette (kmeans)         |
-| `NAFNet_SIDD_width64_512_pal1_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 14.9 MB  |       |        | 1-bit palette (uniform)        |
-| `NAFNet_SIDD_width64_512_pal2_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 28.7 MB  |       |        | 2-bit palette (kmeans)         |
-| `NAFNet_SIDD_width64_512_pal2_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 28.7 MB  |       |        | 2-bit palette (uniform)        |
-| `NAFNet_SIDD_width64_512_pal4_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 56.3 MB  |       |        | 4-bit palette (kmeans)         |
-| `NAFNet_SIDD_width64_512_pal4_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 56.3 MB  |       |        | 4-bit palette (uniform)        |
-| `NAFNet_SIDD_width64_512_pal6_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 83.9 MB  |       |        | 6-bit palette (kmeans)         |
-| `NAFNet_SIDD_width64_512_pal6_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 83.9 MB  |       |        | 6-bit palette (uniform)        |
-| `NAFNet_SIDD_width64_512_pal8_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 111.6 MB |       |        | 8-bit palette (kmeans)         |
-| `NAFNet_SIDD_width64_512_pal8_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x3x512x512` | 111.6 MB |       |        | 8-bit palette (uniform)        |
+| Variant                                                | I/O                          | Size     | Input | Output | Notes                          |
+| ------------------------------------------------------ | ---------------------------- | -------- | ----- | ------ | ------------------------------ |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512.<wbr>mlpackage</code>                    | `1x3x512x512 -> 1x3x512x512` | 221.7 MB |       |        | Base                           |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>quant8.<wbr>mlpackage</code>             | `1x3x512x512 -> 1x3x512x512` | 111.8 MB |       |        | INT8                           |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>ios18.<wbr>mlpackage</code>              | `1x3x512x512 -> 1x3x512x512` | 221.7 MB |       |        | iOS 18 spec                    |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>ios18_<wbr>quant4.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x3x512x512` | 56.7 MB  |       |        | iOS18, 4-bit quant             |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>ios18_<wbr>pal3_<wbr>kmeans.<wbr>mlpackage</code>  | `1x3x512x512 -> 1x3x512x512` | 42.5 MB  |       |        | iOS18, 3-bit palette (kmeans)  |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>ios18_<wbr>pal3_<wbr>uniform.<wbr>mlpackage</code> | `1x3x512x512 -> 1x3x512x512` | 42.5 MB  |       |        | iOS18, 3-bit palette (uniform) |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal1_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x3x512x512` | 14.9 MB  |       |        | 1-bit palette (kmeans)         |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal1_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x3x512x512` | 14.9 MB  |       |        | 1-bit palette (uniform)        |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal2_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x3x512x512` | 28.7 MB  |       |        | 2-bit palette (kmeans)         |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal2_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x3x512x512` | 28.7 MB  |       |        | 2-bit palette (uniform)        |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal4_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x3x512x512` | 56.3 MB  |       |        | 4-bit palette (kmeans)         |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal4_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x3x512x512` | 56.3 MB  |       |        | 4-bit palette (uniform)        |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal6_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x3x512x512` | 83.9 MB  |       |        | 6-bit palette (kmeans)         |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal6_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x3x512x512` | 83.9 MB  |       |        | 6-bit palette (uniform)        |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x3x512x512` | 111.6 MB |       |        | 8-bit palette (kmeans)         |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x3x512x512` | 111.6 MB |       |        | 8-bit palette (uniform)        |
 
 
 ---
@@ -173,26 +170,26 @@ I/O contract summary:
 - Type: `mlProgram`
 
 
-| Variant                                               | Type        | Min target | I/O                          | Size     | Input | Output | Notes                          |
-| ----------------------------------------------------- | ----------- | ---------- | ---------------------------- | -------- | ----- | ------ | ------------------------------ |
-| `DDColor_modelscope_512.mlpackage`                    | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | Base                           |
-| `DDColor_modelscope_512_pruned.mlpackage`             | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | Pruned                         |
-| `DDColor_modelscope_512_quant8.mlpackage`             | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 223.8 MB |       |        | INT8                           |
-| `DDColor_modelscope_512_ios18.mlpackage`              | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | iOS 18 spec                    |
-| `DDColor_modelscope_512_ios18_quant4.mlpackage`       | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x2x512x512` | 112.7 MB |       |        | iOS18, 4-bit quant             |
-| `DDColor_modelscope_512_ios18_pal3_kmeans.mlpackage`  | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x2x512x512` | 84.4 MB  |       |        | iOS18, 3-bit palette (kmeans)  |
-| `DDColor_modelscope_512_ios18_pal3_uniform.mlpackage` | `mlProgram` | iOS18+     | `1x3x512x512 -> 1x2x512x512` | 84.4 MB  |       |        | iOS18, 3-bit palette (uniform) |
-| `DDColor_modelscope_512_pal1_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 28.9 MB  |       |        | 1-bit palette (kmeans)         |
-| `DDColor_modelscope_512_pal1_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 28.9 MB  |       |        | 1-bit palette (uniform)        |
-| `DDColor_modelscope_512_pal2_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 56.7 MB  |       |        | 2-bit palette (kmeans)         |
-| `DDColor_modelscope_512_pal2_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 56.7 MB  |       |        | 2-bit palette (uniform)        |
-| `DDColor_modelscope_512_pal4_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 112.2 MB |       |        | 4-bit palette (kmeans)         |
-| `DDColor_modelscope_512_pal4_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 112.2 MB |       |        | 4-bit palette (uniform)        |
-| `DDColor_modelscope_512_pal6_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 167.8 MB |       |        | 6-bit palette (kmeans)         |
-| `DDColor_modelscope_512_pal6_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 167.8 MB |       |        | 6-bit palette (uniform)        |
-| `DDColor_modelscope_512_pal8_kmeans.mlpackage`        | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 223.4 MB |       |        | 8-bit palette (kmeans)         |
-| `DDColor_modelscope_512_pal8_uniform.mlpackage`       | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 223.4 MB |       |        | 8-bit palette (uniform)        |
-| `DDColor_modelscope_512_pal_unique.mlpackage`         | `mlProgram` | iOS16+     | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | Unique palette variant         |
+| Variant                                               | I/O                          | Size     | Input | Output | Notes                          |
+| ----------------------------------------------------- | ---------------------------- | -------- | ----- | ------ | ------------------------------ |
+| <code>DDColor_<wbr>modelscope_<wbr>512.<wbr>mlpackage</code>                    | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | Base                           |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pruned.<wbr>mlpackage</code>             | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | Pruned                         |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>quant8.<wbr>mlpackage</code>             | `1x3x512x512 -> 1x2x512x512` | 223.8 MB |       |        | INT8                           |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18.<wbr>mlpackage</code>              | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | iOS 18 spec                    |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>quant4.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x2x512x512` | 112.7 MB |       |        | iOS18, 4-bit quant             |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>pal3_<wbr>kmeans.<wbr>mlpackage</code>  | `1x3x512x512 -> 1x2x512x512` | 84.4 MB  |       |        | iOS18, 3-bit palette (kmeans)  |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>pal3_<wbr>uniform.<wbr>mlpackage</code> | `1x3x512x512 -> 1x2x512x512` | 84.4 MB  |       |        | iOS18, 3-bit palette (uniform) |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal1_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x2x512x512` | 28.9 MB  |       |        | 1-bit palette (kmeans)         |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal1_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x2x512x512` | 28.9 MB  |       |        | 1-bit palette (uniform)        |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal2_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x2x512x512` | 56.7 MB  |       |        | 2-bit palette (kmeans)         |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal2_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x2x512x512` | 56.7 MB  |       |        | 2-bit palette (uniform)        |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal4_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x2x512x512` | 112.2 MB |       |        | 4-bit palette (kmeans)         |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal4_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x2x512x512` | 112.2 MB |       |        | 4-bit palette (uniform)        |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal6_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x2x512x512` | 167.8 MB |       |        | 6-bit palette (kmeans)         |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal6_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x2x512x512` | 167.8 MB |       |        | 6-bit palette (uniform)        |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal8_<wbr>kmeans.<wbr>mlpackage</code>        | `1x3x512x512 -> 1x2x512x512` | 223.4 MB |       |        | 8-bit palette (kmeans)         |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal8_<wbr>uniform.<wbr>mlpackage</code>       | `1x3x512x512 -> 1x2x512x512` | 223.4 MB |       |        | 8-bit palette (uniform)        |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal_<wbr>unique.<wbr>mlpackage</code>         | `1x3x512x512 -> 1x2x512x512` | 445.5 MB |       |        | Unique palette variant         |
 
 
 ---
@@ -209,23 +206,23 @@ I/O contract summary:
 - Ensemble overlay variants: pipeline `512x512 -> 1024x1024` (`spec7`, iOS16+)
 
 
-| Model                                                         | Type            | Min target | I/O                    | Size     | Input | Output | Notes                             |
-| ------------------------------------------------------------- | --------------- | ---------- | ---------------------- | -------- | ----- | ------ | --------------------------------- |
-| `anime2sketch.mlpackage`                                      | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 207.6 MB |       |        | Base                              |
-| `anime2sketch 2.mlpackage`                                    | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 207.6 MB |       |        | Alternate package name            |
-| `anime2sketch_xcode.mlpackage`                                | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 207.6 MB |       |        | Xcode-optimized                   |
-| `anime2sketch_xcode_fp16.mlpackage`                           | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 103.8 MB |       |        | FP16                              |
-| `anime2sketch_xcode_quant8.mlpackage`                         | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 51.9 MB  |       |        | INT8                              |
-| `anime2sketch_tmp_q8.mlpackage`                               | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 51.9 MB  |       |        | Temporary/experiment INT8 variant |
-| `anime2sketch_xcode_archsame_quant4.mlpackage`                | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 26.0 MB  |       |        | Same arch, 4-bit                  |
-| `anime2sketch_xcode_archsame_quant8.mlpackage`                | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 51.9 MB  |       |        | Same arch, 8-bit                  |
-| `anime2sketch_xcode_archsame_pal4.mlpackage`                  | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 26.0 MB  |       |        | Same arch, pal4                   |
-| `anime2sketch_xcode_lut4.mlpackage`                           | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 26.0 MB  |       |        | LUT 4-bit                         |
-| `anime2sketch_xcode_lut6.mlpackage`                           | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 38.9 MB  |       |        | LUT 6-bit                         |
-| `anime2sketch_xcode_linear4.mlpackage`                        | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 26.0 MB  |       |        | Linear 4-bit                      |
-| `anime2sketch_xcode_hybrid_q4lut4_50.mlpackage`               | `neuralNetwork` | iOS13+     | `512x512 -> 512x512`   | 26.0 MB  |       |        | Hybrid quant                      |
-| `anime2sketch_ensemble_overlay_esrgan_one_model.mlpackage`    | `pipeline`      | iOS16+     | `512x512 -> 1024x1024` | 86.7 MB  |       |        | Ensemble overlay + ESRGAN         |
-| `anime2sketch_ensemble_overlay_esrgan_one_model_v2.mlpackage` | `pipeline`      | iOS16+     | `512x512 -> 1024x1024` | 86.7 MB  |       |        | Ensemble overlay + ESRGAN (v2)    |
+| Model                                                         | I/O                    | Size     | Input | Output | Notes                             |
+| ------------------------------------------------------------- | ---------------------- | -------- | ----- | ------ | --------------------------------- |
+| <code>anime2sketch.<wbr>mlpackage</code>                                      | `512x512 -> 512x512`   | 207.6 MB |       |        | Base                              |
+| <code>anime2sketch 2.<wbr>mlpackage</code>                                    | `512x512 -> 512x512`   | 207.6 MB |       |        | Alternate package name            |
+| <code>anime2sketch_<wbr>xcode.<wbr>mlpackage</code>                                | `512x512 -> 512x512`   | 207.6 MB |       |        | Xcode-optimized                   |
+| <code>anime2sketch_<wbr>xcode_<wbr>fp16.<wbr>mlpackage</code>                           | `512x512 -> 512x512`   | 103.8 MB |       |        | FP16                              |
+| <code>anime2sketch_<wbr>xcode_<wbr>quant8.<wbr>mlpackage</code>                         | `512x512 -> 512x512`   | 51.9 MB  |       |        | INT8                              |
+| <code>anime2sketch_<wbr>tmp_<wbr>q8.<wbr>mlpackage</code>                               | `512x512 -> 512x512`   | 51.9 MB  |       |        | Temporary/experiment INT8 variant |
+| <code>anime2sketch_<wbr>xcode_<wbr>archsame_<wbr>quant4.<wbr>mlpackage</code>                | `512x512 -> 512x512`   | 26.0 MB  |       |        | Same arch, 4-bit                  |
+| <code>anime2sketch_<wbr>xcode_<wbr>archsame_<wbr>quant8.<wbr>mlpackage</code>                | `512x512 -> 512x512`   | 51.9 MB  |       |        | Same arch, 8-bit                  |
+| <code>anime2sketch_<wbr>xcode_<wbr>archsame_<wbr>pal4.<wbr>mlpackage</code>                  | `512x512 -> 512x512`   | 26.0 MB  |       |        | Same arch, pal4                   |
+| <code>anime2sketch_<wbr>xcode_<wbr>lut4.<wbr>mlpackage</code>                           | `512x512 -> 512x512`   | 26.0 MB  |       |        | LUT 4-bit                         |
+| <code>anime2sketch_<wbr>xcode_<wbr>lut6.<wbr>mlpackage</code>                           | `512x512 -> 512x512`   | 38.9 MB  |       |        | LUT 6-bit                         |
+| <code>anime2sketch_<wbr>xcode_<wbr>linear4.<wbr>mlpackage</code>                        | `512x512 -> 512x512`   | 26.0 MB  |       |        | Linear 4-bit                      |
+| <code>anime2sketch_<wbr>xcode_<wbr>hybrid_<wbr>q4lut4_<wbr>50.<wbr>mlpackage</code>               | `512x512 -> 512x512`   | 26.0 MB  |       |        | Hybrid quant                      |
+| <code>anime2sketch_<wbr>ensemble_<wbr>overlay_<wbr>esrgan_<wbr>one_<wbr>model.<wbr>mlpackage</code>    | `512x512 -> 1024x1024` | 86.7 MB  |       |        | Ensemble overlay + ESRGAN         |
+| <code>anime2sketch_<wbr>ensemble_<wbr>overlay_<wbr>esrgan_<wbr>one_<wbr>model_<wbr>v2.<wbr>mlpackage</code> | `512x512 -> 1024x1024` | 86.7 MB  |       |        | Ensemble overlay + ESRGAN (v2)    |
 
 
 ---
