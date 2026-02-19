@@ -1,0 +1,47 @@
+# Core ML artifacts distributed via GitHub Releases (not tracked in repo)
+*.mlmodel
+*.mlpackage
+*.mlmodel.zip
+*.mlpackage.zip
+
+# Local tooling scripts (kept local, not published in repo)
+compare_models.py
+test_ddcolor_coreml_variants.py
+test_nafnet_coreml_variants.py
+Models-List/Scripts/
+requirements.txt
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+
+# IDE / editor
+.idea/
+*.swp
+*.swo
+*~
+
+# Python (if you add conversion scripts later)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Jupyter (if you add notebooks)
+.ipynb_checkpoints/
+
+# Misc
+*.log
+Thumbs.db
+.DS_Store
+Models-List/.DS_Store
+Models-List/RealESRGAN_x4/.DS_Store
