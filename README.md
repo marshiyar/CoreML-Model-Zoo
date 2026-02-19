@@ -3,10 +3,9 @@
 A curated collection of CoreML (`.mlpackage`) models
 All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS, and visionOS.
 
-## Quick start
+# Quick start
 
 1. You can find each model linked to its realease direct link or navigate to "Releases" and select your wanted Model
-
 Each model’s license follows its original upstream project (linked in the Footnotes).
 
 <a id="contents"></a>
@@ -22,19 +21,12 @@ Each model’s license follows its original upstream project (linked in the Foot
 
 # Super Resolution
 
-## Real-ESRGAN
-
-Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
-
-### RealESRGAN x2
+## RealESRGAN x2 [^1]
 
 <details>
 <summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** <code>1x3x256x256 -> 1x3x512x512</code>
-- **Runtime behavior:** arbitrary image sizes are supported in app/runtime via tiling/resizing
-- **Minimum target:** <code>iOS16+</code>
-- **Filename mapping:** <code>&lt;model_id&gt;.mlpackage</code>
 
 </details>
 
@@ -52,8 +44,6 @@ Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 <summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** <code>1x3x256x256 -> 1x3x1024x1024</code>
-- **Minimum target:** base model <code>iOS15+</code> (<code>spec6</code>), compressed variants <code>iOS16+</code> (<code>spec7</code>)
-- **Filename mapping:** <code>&lt;model_id&gt;.mlpackage</code>
 
 </details>
 
@@ -67,18 +57,12 @@ Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 
 # Image Denoising
 
-## NAFNet
-
-Image denoising with NAFNet (SIDD-trained, width 64). Original: [megvii-research/NAFNet](https://github.com/megvii-research/NAFNet).
-
-Models live in `Models-List/NAFNet_SIDD_width64/`.
+## NAFNet [^2]
 
 <details>
 <summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** `1x3x512x512 -> 1x3x512x512`
-- **CoreML type:** `mlProgram`
-- **Filename mapping:** `<model_id>.mlpackage`
 
 </details>
 
@@ -96,9 +80,7 @@ Models live in `Models-List/NAFNet_SIDD_width64/`.
 
 # Image Colorization
 
-## DDColor
-
-Models live in `Models-List/DDColor/`.
+## DDColor [^4]
 
 <details>
 <summary><strong>Model contract</strong></summary>
@@ -121,18 +103,15 @@ Models live in `Models-List/DDColor/`.
 | <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal-8_<wbr>uniform</code> | 223.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal-8_uniform.png?raw=true" width="120" /> | pal-8 uniform |
 | <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>Q-8</code> | 223.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_Q-8.png?raw=true" width="120" /> | Q-8 |
 
-
 ---
 
-## Image2Image (Anime2Sketch)
+## Image2Image (Anime2Sketch) [^3]
 
 Models live in `Models-List/anime2sketch/`.
 <details>
 <summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** `512x512 -> 512x512`
-- **Minimum target:** `iOS13+` (`spec4`)
-- **Filename mapping:** `<model_id>.mlpackage`
 
 </details>
 
@@ -144,23 +123,20 @@ Models live in `Models-List/anime2sketch/`.
 | <code>anime2sketch_<wbr>xcode_<wbr>LUT-6</code> | 38.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_LUT-6.png?raw=true" width="120" /> | LUT-6 |
 | <code>anime2sketch_<wbr>xcode_<wbr>Q-8</code> | 51.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_Q-8.png?raw=true" width="120" /> | Q-8 |
 
-
----
-
-## Thanks
-
-Thanks to the authors of Real-ESRGAN, NAFNet, DDColor, and Anime2Sketch for the original models and code.
-
----
-
 ## Author
 
 Arshiya Rahgozar  
 [GitHub](https://github.com/marshiyar)
 [LinkedIn](https://www.linkedin.com/in/marshiyar/)
 
-### Footnotes
+## Thanks
 
-Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
-Anime/style artwork to sketch conversion. Original: [Mukosame/Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) (MIT).
-Grayscale image colorization. ModelScope variant. Original: [piddnad/DDColor](https://github.com/piddnad/DDColor).
+Thanks to the authors of Real-ESRGAN, NAFNet, DDColor, and Anime2Sketch for the original models and code.
+
+[^1]: Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
+
+[^2]: Image denoising with NAFNet (SIDD-trained, width 64). Original: [megvii-research/NAFNet](https://github.com/megvii-research/NAFNet).
+
+[^3]: Anime/style artwork to sketch conversion. Original: [Mukosame/Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) (MIT).
+
+[^4]: Grayscale image colorization. ModelScope variant. Original: [piddnad/DDColor](https://github.com/piddnad/DDColor).
