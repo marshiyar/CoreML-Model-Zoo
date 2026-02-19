@@ -24,7 +24,6 @@ Core ML is Apple’s machine learning framework. You can use these models in iOS
 2. Open your Xcode project and add the `.mlpackage` you need:
   - Drag the model folder (for example `Models-List/RealESRGAN_x4/RealESRGAN_x4.mlpackage`) into your app target, or
   - Copy the `.mlpackage` into your project and add it to the target.
-3. Use the generated Swift API or `MLModel` / `VNCoreMLRequest` in your code.
 
 Each model’s license follows the original project (see links below). Check the respective repos for terms.
 
@@ -43,30 +42,32 @@ Each model’s license follows the original project (see links below). Check the
 
 ## Variant naming and compatibility
 
-This section is based on `Models-List/Scripts` (`compress_model.py`, `slim_architecture.py`, `convert_realesrgan_x2plus_to_coreml.py`, `compare_models.py`) and local model specs in this repo.
+This section reflects the current model filenames in `Models-List/*/*.mlpackage` and the scripts in `Models-List/Scripts/`.
 
 
-| Pattern / suffix             | Meaning                                                     |
-| ---------------------------- | ----------------------------------------------------------- |
-| `_quant8`                    | 8-bit linear quantization                                   |
-| `_quant4`                    | 4-bit linear quantization                                   |
-| `_palN_kmeans`               | N-bit k-means palettization (LUT)                           |
-| `_palN_uniform` / `_linearN` | N-bit uniform/linear LUT palettization                      |
-| `_pal_unique`                | Unique-value palette variant                                |
-| `_pruned`                    | Threshold pruning (mlProgram path in scripts)               |
-| `_slim`, `_slimmer`          | Architecture/compute-reduced variants                       |
-| `arch_b*_nf*_gc`*            | RRDB architecture-slim variants from `slim_architecture.py` |
-| `_flex`, `_flex1280`         | Flexible input size variants (RangeDim bounds)              |
-| `_hybrid_q4lut4_50`          | Hybrid neural-network compression (mixed LUT4 + linear4)    |
-| `_wrapped`                   | Wrapped/pipeline style package                              |
+| Pattern / suffix | Meaning |
+| ---------------- | ------- |
+| `_quant8` | 8-bit linear quantization |
+| `_quant4` | 4-bit linear quantization |
+| `_palN_kmeans` | N-bit k-means palette/LUT compression |
+| `_palN_uniform` | N-bit uniform palette/LUT compression |
+| `_linear4` | Linear 4-bit compression variant |
+| `_pruned` | Pruned weights variant |
+| `_slim`, `_slimmer` | Architecture/compute-reduced variants |
+| `_flex1280` | Flexible input variant with upper bound 1280 |
+| `_fp16` | FP16-weight variant |
+| `_archsame` | Quantized/compressed variant preserving base architecture |
+| `_hybrid_q4lut4_50` | Hybrid compression variant |
+| `_ios18_...` | iOS 18+ targeted package variant |
+| `_xcode` | Xcode-converted/exported variant naming used in this repo |
 
 
 Compatibility notes:
 
-- `compare_models.py` expects single-input/single-output models and supports both `multiArrayType` and `imageType`.
-- `convert_realesrgan_x2plus_to_coreml.py` enforces even input height/width for x2plus conversion; flex variants keep that rule.
-- 4-bit mlProgram variants in this repo are in iOS 18+ spec packages.
-- Local spec version mapping used in tables: `spec4 -> iOS13+`, `spec6 -> iOS15+`, `spec7 -> iOS16+`, `spec9 -> iOS18+`.
+- `Models-List/Scripts/compare_models.py` expects single-input/single-output models and supports both `multiArrayType` and `imageType`.
+- `RealESRGAN_x2plus_flex1280` is the dynamic-shape x2 package in the current repo.
+- Variants with `_ios18_` are iOS 18+ packages.
+- Local spec-version mapping used in this README: `spec4 -> iOS13+`, `spec6 -> iOS15+`, `spec7 -> iOS16+`, `spec9 -> iOS18+`.
 
 ---
 
@@ -112,7 +113,6 @@ I/O contract summary:
 | <code>RealESRGAN_<wbr>x4_<wbr>pruned.<wbr>mlpackage</code> | 32.5 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pruned.png?raw=true" width="120" /> | Pruned |
 | <code>RealESRGAN_<wbr>x4_<wbr>quant8.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | INT8 quantized |
 | <code>RealESRGAN_<wbr>x4_<wbr>pal4.<wbr>mlpackage</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | Palette 4-bit |
-| <code>RealESRGAN_<wbr>x4_<wbr>arch_<wbr>b8_<wbr>nf48_<wbr>gc24_<wbr>xcode.<wbr>mlpackage</code> | 6.6 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_arch_b8_xcode.png?raw=true" width="120" /> | Architecture-slim (`b8,nf48,gc24`) |
 
 
 ---
