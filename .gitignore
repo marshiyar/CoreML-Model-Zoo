@@ -1,3 +1,7 @@
+# README sample images (hosted via GitHub Releases, not in repo)
+Models-List/**/input_images/
+Models-List/**/output_images/
+
 # Core ML artifacts distributed via GitHub Releases (not tracked in repo)
 *.mlmodel
 *.mlpackage
