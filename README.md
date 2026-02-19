@@ -3,18 +3,13 @@
 A curated collection of Core ML (`.mlpackage`) models
 All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS, and visionOS.
 
----
 
 ## Quick start
 
-1. Clone or download this repository.
-2. Drag the target `.mlpackage` folder into your Xcode app target.
-3. Run prediction with Core ML (or compare variants with `Models-List/Scripts/compare_models.py`).
-4. Use the section below for model-specific I/O details and sample outputs.
+1. You can find each model linked to its realease direct link or navigate to "Releases" and select your wanted Model
+2. Drag the target `.mlpackage` folder into your Xcode app.
 
 Each model’s license follows its original upstream project (linked in each section).
-
----
 
 <a id="contents"></a>
 <details>
@@ -27,8 +22,9 @@ Each model’s license follows its original upstream project (linked in each sec
 
 </details>
 
-## Super Resolution (Real-ESRGAN)
+# Super Resolution
 
+## Real-ESRGAN
 Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
 
 Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
@@ -75,8 +71,9 @@ Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 
 ---
 
-## Image Denoising (NAFNet)
+# Image Denoising
 
+## NAFNet
 Image denoising with NAFNet (SIDD-trained, width 64). Original: [megvii-research/NAFNet](https://github.com/megvii-research/NAFNet).
 
 Models live in `Models-List/NAFNet_SIDD_width64/`.
@@ -100,11 +97,11 @@ Models live in `Models-List/NAFNet_SIDD_width64/`.
 | <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>uniform</code> | 111.6 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal8_uniform.png?raw=true" width="120" /> | pal8 uniform |
 | <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>quant8</code> | 111.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_quant8.png?raw=true" width="120" /> | quant8 |
 
-
 ---
 
-## Image Colorization (DDColor)
+# Image Colorization
 
+## DDColor
 Grayscale image colorization. ModelScope variant. Original: [piddnad/DDColor](https://github.com/piddnad/DDColor).
 
 Models live in `Models-List/DDColor/`.
@@ -167,7 +164,6 @@ Thanks to the authors of Real-ESRGAN, NAFNet, DDColor, and Anime2Sketch for the 
 
 ## Author
 
-[Your Name]  
-[Your Title / Role]  
-Contact: [your@email.com](mailto:your@email.com)  
-[GitHub](https://github.com/[your-username])
+Arshiya Rahgozar  
+[GitHub](https://github.com/marshiyar)
+[LinkedIn](https://www.linkedin.com/in/marshiyar/)
