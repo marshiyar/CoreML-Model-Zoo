@@ -10,7 +10,9 @@ All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS,
 
 ---
 
-## At a glance
+<a id="at-a-glance"></a>
+<details>
+<summary><strong>At a glance</strong></summary>
 
 | Family | Task | Folder | Models | Baseline I/O |
 | ------ | ---- | ------ | ------ | ------------ |
@@ -19,6 +21,8 @@ All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS,
 | NAFNet SIDD width64 | Denoising | `Models-List/NAFNet_SIDD_width64/` | 6 | `1x3x512x512 -> 1x3x512x512` |
 | DDColor modelscope 512 | Colorization | `Models-List/DDColor/` | 9 | `gray_rgb:1x3x512x512 -> ab:1x2x512x512` |
 | Anime2Sketch | Image-to-image sketching | `Models-List/anime2sketch/` | 4 | `512x512 -> 512x512` |
+
+</details>
 
 ---
 
@@ -33,7 +37,9 @@ Each model’s license follows its original upstream project (linked in each sec
 
 ---
 
-## Contents
+<a id="contents"></a>
+<details>
+<summary><strong>Contents</strong></summary>
 
 - [At a glance](#at-a-glance)
 - [Quick start](#quick-start)
@@ -43,12 +49,15 @@ Each model’s license follows its original upstream project (linked in each sec
 - [Image Colorization (DDColor)](#image-colorization-ddcolor)
 - [Image2Image (Anime2Sketch)](#image2image-anime2sketch)
 
+</details>
+
 ---
 
-## Variant naming and compatibility
+<a id="variant-naming-and-compatibility"></a>
+<details>
+<summary><strong>Variant naming and compatibility</strong></summary>
 
 This section reflects the current model filenames in `Models-List/*/*.mlpackage` and the scripts in `Models-List/Scripts/`.
-
 
 | Pattern / suffix | Meaning |
 | ---------------- | ------- |
@@ -59,7 +68,6 @@ This section reflects the current model filenames in `Models-List/*/*.mlpackage`
 | `_quant4` | 4-bit linear quantization |
 | `_quant8` | 8-bit linear quantization |
 | `_xcode` | Xcode-converted/exported variant naming used in this repo |
-
 
 Compatibility notes:
 
@@ -75,6 +83,8 @@ Variant profile shorthand used in tables:
 | `quant8` | 8-bit linear quantization, strong size/runtime reduction |
 | `quant4` | 4-bit linear quantization, aggressive compression |
 | `palN` / `lutN` | Palette/LUT compression at N-bit depth |
+
+</details>
 
 ---
 
