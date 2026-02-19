@@ -1,28 +1,7 @@
 # CoreML-Model-Zoo
 
-A curated collection of Core ML (`.mlpackage`) models for:
-- super-resolution (RealESRGAN)
-- denoising (NAFNet)
-- colorization (DDColor)
-- anime-to-sketch conversion (Anime2Sketch)
-
+A curated collection of Core ML (`.mlpackage`) models
 All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS, and visionOS.
-
----
-
-<a id="at-a-glance"></a>
-<details>
-<summary><strong>At a glance</strong></summary>
-
-| Family | Task | Folder | Models | Baseline I/O |
-| ------ | ---- | ------ | ------ | ------------ |
-| RealESRGAN x2 | Super-resolution (2x) | `Models-List/RealESRGAN_x2/` | 5 | `1x3x256x256 -> 1x3x512x512` |
-| RealESRGAN x4 | Super-resolution (4x) | `Models-List/RealESRGAN_x4/` | 3 | `1x3x256x256 -> 1x3x1024x1024` |
-| NAFNet SIDD width64 | Denoising | `Models-List/NAFNet_SIDD_width64/` | 6 | `1x3x512x512 -> 1x3x512x512` |
-| DDColor modelscope 512 | Colorization | `Models-List/DDColor/` | 9 | `gray_rgb:1x3x512x512 -> ab:1x2x512x512` |
-| Anime2Sketch | Image-to-image sketching | `Models-List/anime2sketch/` | 4 | `512x512 -> 512x512` |
-
-</details>
 
 ---
 
