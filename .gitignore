@@ -1,6 +1,15 @@
-# Core ML models (not tracked, no LFS)
+# Core ML artifacts distributed via GitHub Releases (not tracked in repo)
 *.mlmodel
 *.mlpackage
+*.mlmodel.zip
+*.mlpackage.zip
+
+# Local tooling scripts (kept local, not published in repo)
+compare_models.py
+test_ddcolor_coreml_variants.py
+test_nafnet_coreml_variants.py
+Models-List/Scripts/
+requirements.txt
 
 # macOS
 .DS_Store
