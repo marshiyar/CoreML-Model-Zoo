@@ -20,52 +20,12 @@ Each model’s license follows its original upstream project (linked in each sec
 <details>
 <summary><strong>Contents</strong></summary>
 
-- [At a glance](#at-a-glance)
-- [Quick start](#quick-start)
-- [Variant naming and compatibility](#variant-naming-and-compatibility)
 - [Super Resolution (Real-ESRGAN)](#super-resolution-real-esrgan)
 - [Image Denoising (NAFNet)](#image-denoising-nafnet)
 - [Image Colorization (DDColor)](#image-colorization-ddcolor)
 - [Image2Image (Anime2Sketch)](#image2image-anime2sketch)
 
 </details>
-
----
-
-<a id="variant-naming-and-compatibility"></a>
-<details>
-<summary><strong>Variant naming and compatibility</strong></summary>
-
-This section reflects the current model filenames in `Models-List/*/*.mlpackage` and the scripts in `Models-List/Scripts/`.
-
-| Pattern / suffix | Meaning |
-| ---------------- | ------- |
-| `_ios18_...` | iOS 18+ targeted package variant |
-| `_lutN` | N-bit LUT compression variant |
-| `_palN_kmeans` | N-bit k-means palette/LUT compression |
-| `_palN_uniform` | N-bit uniform palette/LUT compression |
-| `_quant4` | 4-bit linear quantization |
-| `_quant8` | 8-bit linear quantization |
-| `_xcode` | Xcode-converted/exported variant naming used in this repo |
-
-Compatibility notes:
-
-- `Models-List/Scripts/compare_models.py` expects single-input/single-output models and supports both `multiArrayType` and `imageType`.
-- Variants with `_ios18_` are iOS 18+ packages.
-- Local spec-version mapping used in this README: `spec4 -> iOS13+`, `spec6 -> iOS15+`, `spec7 -> iOS16+`, `spec9 -> iOS18+`.
-
-Variant profile shorthand used in tables:
-
-| Profile | Meaning |
-| ------- | ------- |
-| `base` | Original full-size package, highest fidelity, largest size |
-| `quant8` | 8-bit linear quantization, strong size/runtime reduction |
-| `quant4` | 4-bit linear quantization, aggressive compression |
-| `palN` / `lutN` | Palette/LUT compression at N-bit depth |
-
-</details>
-
----
 
 ## Super Resolution (Real-ESRGAN)
 
@@ -74,13 +34,15 @@ Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https
 Models live in `Models-List/RealESRGAN_x2/` and `Models-List/RealESRGAN_x4/`.
 
 ### RealESRGAN x2
+<details>
+<summary><strong>Model contract</strong></summary>
 
-Model contract:
-
-- **Nominal I/O:** `1x3x256x256 -> 1x3x512x512`
+- **Nominal I/O:** <code>1x3x256x256 -> 1x3x512x512</code>
 - **Runtime behavior:** arbitrary image sizes are supported in app/runtime via tiling/resizing
-- **Minimum target:** `iOS16+`
-- **Filename mapping:** `<model_id>.mlpackage`
+- **Minimum target:** <code>iOS16+</code>
+- **Filename mapping:** <code>&lt;model_id&gt;.mlpackage</code>
+
+</details>
 
 
 | Model ID | Size | Input | Output | Profile |
@@ -94,11 +56,14 @@ Model contract:
 
 ### RealESRGAN x4
 
-Model contract:
+<details>
+<summary><strong>Model contract</strong></summary>
 
-- **Nominal I/O:** `1x3x256x256 -> 1x3x1024x1024`
-- **Minimum target:** base model `iOS15+` (`spec6`), compressed variants `iOS16+` (`spec7`)
-- **Filename mapping:** `<model_id>.mlpackage`
+- **Nominal I/O:** <code>1x3x256x256 -> 1x3x1024x1024</code>
+- **Minimum target:** base model <code>iOS15+</code> (<code>spec6</code>), compressed variants <code>iOS16+</code> (<code>spec7</code>)
+- **Filename mapping:** <code>&lt;model_id&gt;.mlpackage</code>
+
+</details>
 
 
 | Model ID | Size | Input | Output | Profile |
@@ -116,11 +81,14 @@ Image denoising with NAFNet (SIDD-trained, width 64). Original: [megvii-research
 
 Models live in `Models-List/NAFNet_SIDD_width64/`.
 
-Model contract:
+<details>
+<summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** `1x3x512x512 -> 1x3x512x512`
 - **Core ML type:** `mlProgram`
 - **Filename mapping:** `<model_id>.mlpackage`
+
+</details>
 
 
 | Model ID | Size | Input | Output | Profile |
@@ -141,11 +109,14 @@ Grayscale image colorization. ModelScope variant. Original: [piddnad/DDColor](ht
 
 Models live in `Models-List/DDColor/`.
 
-Model contract:
+<details>
+<summary><strong>Model contract</strong></summary>
 
-- **Nominal I/O:** `gray_rgb:1x3x512x512 -> ab:1x2x512x512`
-- **Core ML type:** `mlProgram`
-- **Filename mapping:** `<model_id>.mlpackage`
+- **Nominal I/O:** <code>gray_rgb:1x3x512x512 -> ab:1x2x512x512</code>
+- **Core ML type:** <code>mlProgram</code>
+- **Filename mapping:** <code>&lt;model_id&gt;.mlpackage</code>
+
+</details>
 
 
 | Model ID | Size | Input | Output | Profile |
@@ -168,12 +139,14 @@ Model contract:
 Anime/style artwork to sketch conversion. Original: [Mukosame/Anime2Sketch](https://github.com/Mukosame/Anime2Sketch) (MIT).
 
 Models live in `Models-List/anime2sketch/`.
-
-Model contract:
+<details>
+<summary><strong>Model contract</strong></summary>
 
 - **Nominal I/O:** `512x512 -> 512x512`
 - **Minimum target:** `iOS13+` (`spec4`)
 - **Filename mapping:** `<model_id>.mlpackage`
+
+</details>
 
 
 | Model ID | Size | Input | Output | Profile |
