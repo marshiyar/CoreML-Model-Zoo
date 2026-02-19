@@ -47,13 +47,12 @@ This section reflects the current model filenames in `Models-List/*/*.mlpackage`
 
 | Pattern / suffix | Meaning |
 | ---------------- | ------- |
-| `_quant8` | 8-bit linear quantization |
-| `_quant4` | 4-bit linear quantization |
+| `_ios18_...` | iOS 18+ targeted package variant |
+| `_lutN` | N-bit LUT compression variant |
 | `_palN_kmeans` | N-bit k-means palette/LUT compression |
 | `_palN_uniform` | N-bit uniform palette/LUT compression |
-| `_linear4` | Linear 4-bit compression variant |
-| `_hybrid_q4lut4_50` | Hybrid compression variant |
-| `_ios18_...` | iOS 18+ targeted package variant |
+| `_quant4` | 4-bit linear quantization |
+| `_quant8` | 8-bit linear quantization |
 | `_xcode` | Xcode-converted/exported variant naming used in this repo |
 
 
@@ -78,15 +77,16 @@ I/O contract summary:
 - Fixed variants use `1x3x256x256 -> 1x3x512x512`.
 - In practice, arbitrary input image dimensions are supported in app/runtime flows via tiling/resizing.
 - Deployment target in this folder: `iOS16+`
+- Model ID maps to package filename as `<id>.mlpackage`
 
 
-| Model | Size | Input | Output | Notes |
-| --------------------------------------------- | ------- | ----- | ------ | ------------------------ |
-| <code>RealESRGAN_<wbr>x2plus.<wbr>mlpackage</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/input_images/RealESRGAN_x2_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus.png?raw=true" width="120" /> | Base 2x upscale |
-| <code>RealESRGAN_<wbr>x2plus_<wbr>quant8.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_quant8.png?raw=true" width="120" /> | INT8 quantized |
-| <code>RealESRGAN_<wbr>x2plus_<wbr>pal4.<wbr>mlpackage</code> | 8.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal4.png?raw=true" width="120" /> | Palette 4-bit |
-| <code>RealESRGAN_<wbr>x2plus_<wbr>pal6.<wbr>mlpackage</code> | 12.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal6.png?raw=true" width="120" /> | Palette 6-bit |
-| <code>RealESRGAN_<wbr>x2plus_<wbr>pal8.<wbr>mlpackage</code> | 16.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal8.png?raw=true" width="120" /> | Palette 8-bit |
+| Model ID | Size | Input | Output | Profile |
+| --------------------------------------- | ------- | ----- | ------ | ------- |
+| <code>RealESRGAN_<wbr>x2plus</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/input_images/RealESRGAN_x2_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus.png?raw=true" width="120" /> | base |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pal4</code> | 8.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal4.png?raw=true" width="120" /> | pal4 |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pal6</code> | 12.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal6.png?raw=true" width="120" /> | pal6 |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>pal8</code> | 16.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal8.png?raw=true" width="120" /> | pal8 |
+| <code>RealESRGAN_<wbr>x2plus_<wbr>quant8</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_quant8.png?raw=true" width="120" /> | int8 |
 
 
 ### RealESRGAN x4
@@ -95,13 +95,14 @@ I/O contract summary:
 
 - Models in this folder use `1x3x256x256 -> 1x3x1024x1024`
 - Base package is `iOS15+` (`spec6`); compressed variants are `iOS16+` (`spec7`)
+- Model ID maps to package filename as `<id>.mlpackage`
 
 
-| Model | Size | Input | Output | Notes |
-| ------------------------------------------------- | ------- | ----- | ------ | ---------------------------------- |
-| <code>RealESRGAN_<wbr>x4.<wbr>mlpackage</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | Base 4x upscale |
-| <code>RealESRGAN_<wbr>x4_<wbr>quant8.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | INT8 quantized |
-| <code>RealESRGAN_<wbr>x4_<wbr>pal4.<wbr>mlpackage</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | Palette 4-bit |
+| Model ID | Size | Input | Output | Profile |
+| ----------------------------------- | ------- | ----- | ------ | ------- |
+| <code>RealESRGAN_<wbr>x4</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | base |
+| <code>RealESRGAN_<wbr>x4_<wbr>pal4</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | pal4 |
+| <code>RealESRGAN_<wbr>x4_<wbr>quant8</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | int8 |
 
 
 ---
@@ -116,16 +117,17 @@ I/O contract summary:
 
 - `1x3x512x512 -> 1x3x512x512`
 - Type: `mlProgram`
+- Model ID maps to package filename as `<id>.mlpackage`
 
 
-| Variant | Size | Input | Output | Notes |
-| ------------------------------------------------------ | -------- | ----- | ------ | ------------------------------ |
-| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512.<wbr>mlpackage</code> | 221.7 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/input_images/NAFNet_SIDD_width64_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512.png?raw=true" width="120" /> | Base |
-| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>quant8.<wbr>mlpackage</code> | 111.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_quant8.png?raw=true" width="120" /> | INT8 |
-| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>ios18_<wbr>quant4.<wbr>mlpackage</code> | 56.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_ios18_quant4.png?raw=true" width="120" /> | iOS18, 4-bit quant |
-| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal6_<wbr>kmeans.<wbr>mlpackage</code> | 83.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal6_kmeans.png?raw=true" width="120" /> | 6-bit palette (kmeans) |
-| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>kmeans.<wbr>mlpackage</code> | 111.6 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal8_kmeans.png?raw=true" width="120" /> | 8-bit palette (kmeans) |
-| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>uniform.<wbr>mlpackage</code> | 111.6 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal8_uniform.png?raw=true" width="120" /> | 8-bit palette (uniform) |
+| Model ID | Size | Input | Output | Profile |
+| ------------------------------------------------ | -------- | ----- | ------ | ------------- |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512</code> | 221.7 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/input_images/NAFNet_SIDD_width64_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512.png?raw=true" width="120" /> | base |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>ios18_<wbr>quant4</code> | 56.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_ios18_quant4.png?raw=true" width="120" /> | iOS18 int4 |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal6_<wbr>kmeans</code> | 83.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal6_kmeans.png?raw=true" width="120" /> | pal6 kmeans |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>kmeans</code> | 111.6 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal8_kmeans.png?raw=true" width="120" /> | pal8 kmeans |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>pal8_<wbr>uniform</code> | 111.6 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_pal8_uniform.png?raw=true" width="120" /> | pal8 uniform |
+| <code>NAFNet_<wbr>SIDD_<wbr>width64_<wbr>512_<wbr>quant8</code> | 111.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/NAFNet_SIDD_width64/NAFNet_SIDD_width64_model_outputs/output_images/output_images1/NAFNet_SIDD_width64_512_quant8.png?raw=true" width="120" /> | int8 |
 
 
 ---
@@ -140,19 +142,20 @@ I/O contract summary:
 
 - `gray_rgb:1x3x512x512 -> ab:1x2x512x512`
 - Type: `mlProgram`
+- Model ID maps to package filename as `<id>.mlpackage`
 
 
-| Variant | Size | Input | Output | Notes |
-| ----------------------------------------------------- | -------- | ----- | ------ | ------------------------------ |
-| <code>DDColor_<wbr>modelscope_<wbr>512.<wbr>mlpackage</code> | 445.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/input_images/DDColor_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512.png?raw=true" width="120" /> | Base |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>quant8.<wbr>mlpackage</code> | 223.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_quant8.png?raw=true" width="120" /> | INT8 |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>quant4.<wbr>mlpackage</code> | 112.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_ios18_quant4.png?raw=true" width="120" /> | iOS18, 4-bit quant |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>pal3_<wbr>kmeans.<wbr>mlpackage</code> | 84.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_ios18_pal3_kmeans.png?raw=true" width="120" /> | iOS18, 3-bit palette (kmeans) |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal4_<wbr>kmeans.<wbr>mlpackage</code> | 112.2 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal4_kmeans.png?raw=true" width="120" /> | 4-bit palette (kmeans) |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal6_<wbr>kmeans.<wbr>mlpackage</code> | 167.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal6_kmeans.png?raw=true" width="120" /> | 6-bit palette (kmeans) |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal6_<wbr>uniform.<wbr>mlpackage</code> | 167.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal6_uniform.png?raw=true" width="120" /> | 6-bit palette (uniform) |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal8_<wbr>kmeans.<wbr>mlpackage</code> | 223.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal8_kmeans.png?raw=true" width="120" /> | 8-bit palette (kmeans) |
-| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal8_<wbr>uniform.<wbr>mlpackage</code> | 223.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal8_uniform.png?raw=true" width="120" /> | 8-bit palette (uniform) |
+| Model ID | Size | Input | Output | Profile |
+| --------------------------------------------------- | -------- | ----- | ------ | ------------- |
+| <code>DDColor_<wbr>modelscope_<wbr>512</code> | 445.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/input_images/DDColor_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512.png?raw=true" width="120" /> | base |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>pal3_<wbr>kmeans</code> | 84.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_ios18_pal3_kmeans.png?raw=true" width="120" /> | iOS18 pal3 kmeans |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>ios18_<wbr>quant4</code> | 112.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_ios18_quant4.png?raw=true" width="120" /> | iOS18 int4 |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal4_<wbr>kmeans</code> | 112.2 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal4_kmeans.png?raw=true" width="120" /> | pal4 kmeans |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal6_<wbr>kmeans</code> | 167.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal6_kmeans.png?raw=true" width="120" /> | pal6 kmeans |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal6_<wbr>uniform</code> | 167.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal6_uniform.png?raw=true" width="120" /> | pal6 uniform |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal8_<wbr>kmeans</code> | 223.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal8_kmeans.png?raw=true" width="120" /> | pal8 kmeans |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>pal8_<wbr>uniform</code> | 223.4 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_pal8_uniform.png?raw=true" width="120" /> | pal8 uniform |
+| <code>DDColor_<wbr>modelscope_<wbr>512_<wbr>quant8</code> | 223.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/DDColor/DDColor_Model_outputs/output_images/output_images1/DDColor_modelscope_512_quant8.png?raw=true" width="120" /> | int8 |
 
 
 ---
@@ -166,17 +169,15 @@ Models live in `Models-List/anime2sketch/`.
 I/O contract summary:
 
 - Main neural-network variants: `512x512 -> 512x512` (`spec4`, iOS13+)
-- Ensemble overlay variants: pipeline `512x512 -> 1024x1024` (`spec7`, iOS16+)
+- Model ID maps to package filename as `<id>.mlpackage`
 
 
-| Model | Size | Input | Output | Notes |
-| ------------------------------------------------------------- | -------- | ----- | ------ | --------------------------------- |
-| <code>anime2sketch.<wbr>mlpackage</code> | 207.6 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/input_images/Anime2Sketch_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch.png?raw=true" width="120" /> | Base |
-| <code>anime2sketch_<wbr>xcode_<wbr>quant8.<wbr>mlpackage</code> | 51.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_quant8.png?raw=true" width="120" /> | INT8 |
-| <code>anime2sketch_<wbr>xcode_<wbr>lut4.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_lut4.png?raw=true" width="120" /> | LUT 4-bit |
-| <code>anime2sketch_<wbr>xcode_<wbr>lut6.<wbr>mlpackage</code> | 38.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_lut6.png?raw=true" width="120" /> | LUT 6-bit |
-| <code>anime2sketch_<wbr>xcode_<wbr>linear4.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_linear4.png?raw=true" width="120" /> | Linear 4-bit |
-| <code>anime2sketch_<wbr>xcode_<wbr>hybrid_<wbr>q4lut4_<wbr>50.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_hybrid_q4lut4_50.png?raw=true" width="120" /> | Hybrid quant |
+| Model ID | Size | Input | Output | Profile |
+| --------------------------------------------------------- | -------- | ----- | ------ | ------- |
+| <code>anime2sketch</code> | 207.6 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/input_images/Anime2Sketch_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch.png?raw=true" width="120" /> | base |
+| <code>anime2sketch_<wbr>xcode_<wbr>lut4</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_lut4.png?raw=true" width="120" /> | lut4 |
+| <code>anime2sketch_<wbr>xcode_<wbr>lut6</code> | 38.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_lut6.png?raw=true" width="120" /> | lut6 |
+| <code>anime2sketch_<wbr>xcode_<wbr>quant8</code> | 51.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_quant8.png?raw=true" width="120" /> | int8 |
 
 
 ---
