@@ -140,7 +140,7 @@ python compare_models.py \
   --overlay-black --overlay-name anime2sketch_overlay_black.png --overlay-threshold 170
 ```
 
-To chain that merged sketch into `RealESRGAN_x4_slimmer` in one run:
+To chain that merged sketch into `RealESRGAN_x4_quant8` in one run:
 
 ```bash
 python compare_models.py \
@@ -149,7 +149,7 @@ python compare_models.py \
   --out-dir model_outputs_anime_chain \
   --bw-enhance --bw-depixel 1.2 --bw-sharpness 1.1 --bw-threshold 170 \
   --overlay-black --overlay-name anime2sketch_overlay_black.png --overlay-threshold 170 \
-  --chain-upscale-model RealESRGAN_x4_slimmer.mlpackage --chain-source overlay
+  --chain-upscale-model RealESRGAN_x4_quant8.mlpackage --chain-source overlay
 ```
 
 ## One fused model (single .mlpackage)
@@ -158,14 +158,14 @@ Build one model package that already includes:
 - the 3 anime models
 - black-overlap merge (darkest pixel wins)
 - resize to ESRGAN input
-- `RealESRGAN_x4_slimmer`
+- `RealESRGAN_x4_quant8`
 
 ```bash
 python build_fused_anime_esrgan_model.py \
   --anime-q4 anime2sketch_xcode_archsame_quant4.mlpackage \
   --anime-lut4 anime2sketch_xcode_lut4.mlpackage \
   --anime-hybrid anime2sketch_xcode_hybrid_q4lut4_50.mlpackage \
-  --esrgan RealESRGAN_x4_slimmer.mlpackage \
+  --esrgan RealESRGAN_x4_quant8.mlpackage \
   -o anime2sketch_ensemble_overlay_esrgan_one_model.mlpackage
 ```
 

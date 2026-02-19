@@ -53,7 +53,6 @@ This section reflects the current model filenames in `Models-List/*/*.mlpackage`
 | `_palN_uniform` | N-bit uniform palette/LUT compression |
 | `_linear4` | Linear 4-bit compression variant |
 | `_pruned` | Pruned weights variant |
-| `_slim`, `_slimmer` | Architecture/compute-reduced variants |
 | `_flex1280` | Flexible input variant with upper bound 1280 |
 | `_fp16` | FP16-weight variant |
 | `_archsame` | Quantized/compressed variant preserving base architecture |
@@ -102,14 +101,12 @@ I/O contract summary:
 I/O contract summary:
 
 - Models in this folder use `1x3x256x256 -> 1x3x1024x1024`
-- Base package is `iOS15+` (`spec6`); compressed/slim variants are `iOS16+` (`spec7`)
+- Base package is `iOS15+` (`spec6`); compressed variants are `iOS16+` (`spec7`)
 
 
 | Model | Size | Input | Output | Notes |
 | ------------------------------------------------- | ------- | ----- | ------ | ---------------------------------- |
 | <code>RealESRGAN_<wbr>x4.<wbr>mlpackage</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | Base 4x upscale |
-| <code>RealESRGAN_<wbr>x4_<wbr>slim.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_slim.png?raw=true" width="120" /> | Slim architecture |
-| <code>RealESRGAN_<wbr>x4_<wbr>slimmer.<wbr>mlpackage</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_slimmer.png?raw=true" width="120" /> | Slimmer architecture |
 | <code>RealESRGAN_<wbr>x4_<wbr>pruned.<wbr>mlpackage</code> | 32.5 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pruned.png?raw=true" width="120" /> | Pruned |
 | <code>RealESRGAN_<wbr>x4_<wbr>quant8.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | INT8 quantized |
 | <code>RealESRGAN_<wbr>x4_<wbr>pal4.<wbr>mlpackage</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | Palette 4-bit |
