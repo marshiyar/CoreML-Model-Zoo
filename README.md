@@ -52,10 +52,6 @@ This section reflects the current model filenames in `Models-List/*/*.mlpackage`
 | `_palN_kmeans` | N-bit k-means palette/LUT compression |
 | `_palN_uniform` | N-bit uniform palette/LUT compression |
 | `_linear4` | Linear 4-bit compression variant |
-| `_pruned` | Pruned weights variant |
-| `_flex1280` | Flexible input variant with upper bound 1280 |
-| `_fp16` | FP16-weight variant |
-| `_archsame` | Quantized/compressed variant preserving base architecture |
 | `_hybrid_q4lut4_50` | Hybrid compression variant |
 | `_ios18_...` | iOS 18+ targeted package variant |
 | `_xcode` | Xcode-converted/exported variant naming used in this repo |
@@ -64,7 +60,6 @@ This section reflects the current model filenames in `Models-List/*/*.mlpackage`
 Compatibility notes:
 
 - `Models-List/Scripts/compare_models.py` expects single-input/single-output models and supports both `multiArrayType` and `imageType`.
-- `RealESRGAN_x2plus_flex1280` is the dynamic-shape x2 package in the current repo.
 - Variants with `_ios18_` are iOS 18+ packages.
 - Local spec-version mapping used in this README: `spec4 -> iOS13+`, `spec6 -> iOS15+`, `spec7 -> iOS16+`, `spec9 -> iOS18+`.
 
@@ -82,14 +77,12 @@ I/O contract summary:
 
 - Fixed variants use `1x3x256x256 -> 1x3x512x512`.
 - In practice, arbitrary input image dimensions are supported in app/runtime flows via tiling/resizing.
-- Flex model supports `1x3x[64..1280]^2` natively with dynamic 2x output.
 - Deployment target in this folder: `iOS16+`
 
 
 | Model | Size | Input | Output | Notes |
 | --------------------------------------------- | ------- | ----- | ------ | ------------------------ |
 | <code>RealESRGAN_<wbr>x2plus.<wbr>mlpackage</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/input_images/RealESRGAN_x2_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus.png?raw=true" width="120" /> | Base 2x upscale |
-| <code>RealESRGAN_<wbr>x2plus_<wbr>flex1280.<wbr>mlpackage</code> | 32.5 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_flex1280.png?raw=true" width="120" /> | Flex, max side 1280 |
 | <code>RealESRGAN_<wbr>x2plus_<wbr>quant8.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_quant8.png?raw=true" width="120" /> | INT8 quantized |
 | <code>RealESRGAN_<wbr>x2plus_<wbr>pal4.<wbr>mlpackage</code> | 8.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal4.png?raw=true" width="120" /> | Palette 4-bit |
 | <code>RealESRGAN_<wbr>x2plus_<wbr>pal6.<wbr>mlpackage</code> | 12.7 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x2/RealESRGAN_x2_model_outputs/output_images/output_images1/RealESRGAN_x2plus_pal6.png?raw=true" width="120" /> | Palette 6-bit |
@@ -107,7 +100,6 @@ I/O contract summary:
 | Model | Size | Input | Output | Notes |
 | ------------------------------------------------- | ------- | ----- | ------ | ---------------------------------- |
 | <code>RealESRGAN_<wbr>x4.<wbr>mlpackage</code> | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/input_images/RealESRGAN_x4_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4.png?raw=true" width="120" /> | Base 4x upscale |
-| <code>RealESRGAN_<wbr>x4_<wbr>pruned.<wbr>mlpackage</code> | 32.5 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pruned.png?raw=true" width="120" /> | Pruned |
 | <code>RealESRGAN_<wbr>x4_<wbr>quant8.<wbr>mlpackage</code> | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_quant8.png?raw=true" width="120" /> | INT8 quantized |
 | <code>RealESRGAN_<wbr>x4_<wbr>pal4.<wbr>mlpackage</code> | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/RealESRGAN_x4/RealESRGAN_x4_model_outputs/output_images/output_images1/RealESRGAN_x4_pal4.png?raw=true" width="120" /> | Palette 4-bit |
 
@@ -180,11 +172,7 @@ I/O contract summary:
 | Model | Size | Input | Output | Notes |
 | ------------------------------------------------------------- | -------- | ----- | ------ | --------------------------------- |
 | <code>anime2sketch.<wbr>mlpackage</code> | 207.6 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/input_images/Anime2Sketch_model_Input1.png?raw=true" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch.png?raw=true" width="120" /> | Base |
-| <code>anime2sketch_<wbr>xcode_<wbr>fp16.<wbr>mlpackage</code> | 103.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_fp16.png?raw=true" width="120" /> | FP16 |
 | <code>anime2sketch_<wbr>xcode_<wbr>quant8.<wbr>mlpackage</code> | 51.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_quant8.png?raw=true" width="120" /> | INT8 |
-| <code>anime2sketch_<wbr>xcode_<wbr>archsame_<wbr>quant4.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_archsame_quant4.png?raw=true" width="120" /> | Same arch, 4-bit |
-| <code>anime2sketch_<wbr>xcode_<wbr>archsame_<wbr>quant8.<wbr>mlpackage</code> | 51.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_archsame_quant8.png?raw=true" width="120" /> | Same arch, 8-bit |
-| <code>anime2sketch_<wbr>xcode_<wbr>archsame_<wbr>pal4.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_archsame_pal4.png?raw=true" width="120" /> | Same arch, pal4 |
 | <code>anime2sketch_<wbr>xcode_<wbr>lut4.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_lut4.png?raw=true" width="120" /> | LUT 4-bit |
 | <code>anime2sketch_<wbr>xcode_<wbr>lut6.<wbr>mlpackage</code> | 38.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_lut6.png?raw=true" width="120" /> | LUT 6-bit |
 | <code>anime2sketch_<wbr>xcode_<wbr>linear4.<wbr>mlpackage</code> | 26.0 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/blob/main/Models-List/anime2sketch/Anime2Sketch_x4_model_outputs/output_images/output_images1/anime2sketch_xcode_linear4.png?raw=true" width="120" /> | Linear 4-bit |

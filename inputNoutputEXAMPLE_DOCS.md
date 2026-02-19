@@ -93,21 +93,12 @@ For anime2sketch, output is same-scale (about `1x`), not `4x`.
 
 Current generated anime2sketch variants in this repo:
 
-- `anime2sketch_xcode.mlpackage` (~208 MB)
-- `anime2sketch_xcode_fp16.mlpackage` (~104 MB)
+- `anime2sketch.mlpackage` (~208 MB)
 - `anime2sketch_xcode_quant8.mlpackage` (~52 MB)
 - `anime2sketch_xcode_lut6.mlpackage` (~39 MB)
 - `anime2sketch_xcode_lut4.mlpackage` (~26 MB)
 - `anime2sketch_xcode_linear4.mlpackage` (~26 MB)
-
-Architecture-preserving compression (same layers/channels/compute graph):
-
-```bash
-python compress_model.py anime2sketch_xcode.mlpackage --quantize 8 -o anime2sketch_xcode_archsame_quant8.mlpackage
-python compress_model.py anime2sketch_xcode.mlpackage --quantize 4 -o anime2sketch_xcode_archsame_quant4.mlpackage
-python compress_model.py anime2sketch_xcode.mlpackage --palettize 4 --palettize-mode kmeans -o anime2sketch_xcode_archsame_pal4.mlpackage
-python compress_model.py anime2sketch_xcode.mlpackage --hybrid --hybrid-lut-fraction 0.5 -o anime2sketch_xcode_hybrid_q4lut4_50.mlpackage
-```
+- `anime2sketch_xcode_hybrid_q4lut4_50.mlpackage` (~26 MB)
 
 You can still use one-pass behavior:
 
@@ -124,7 +115,7 @@ For sharper black-and-white sketches with less jagged pixelation:
 ```bash
 python compare_models.py \
   --image 01169-3398297000.png \
-  --models "anime2sketch_xcode_{archsame_quant4,lut4,hybrid_q4lut4_*}.mlpackage" \
+  --models "anime2sketch_xcode_{linear4,lut4,hybrid_q4lut4_*}.mlpackage" \
   --out-dir model_outputs_anime_hybrid_bw \
   --bw-enhance --bw-depixel 1.2 --bw-sharpness 1.1 --bw-threshold 170
 ```
@@ -134,7 +125,7 @@ To merge the 3 model outputs into one image (darkest black from each is kept):
 ```bash
 python compare_models.py \
   --image 01169-3398297000.png \
-  --models "anime2sketch_xcode_{archsame_quant4,lut4,hybrid_q4lut4_*}.mlpackage" \
+  --models "anime2sketch_xcode_{linear4,lut4,hybrid_q4lut4_*}.mlpackage" \
   --out-dir model_outputs_anime_hybrid_bw \
   --bw-enhance --bw-depixel 1.2 --bw-sharpness 1.1 --bw-threshold 170 \
   --overlay-black --overlay-name anime2sketch_overlay_black.png --overlay-threshold 170
@@ -145,7 +136,7 @@ To chain that merged sketch into `RealESRGAN_x4_quant8` in one run:
 ```bash
 python compare_models.py \
   --image 01169-3398297000.png \
-  --models "anime2sketch_xcode_{archsame_quant4,lut4,hybrid_q4lut4_*}.mlpackage" \
+  --models "anime2sketch_xcode_{linear4,lut4,hybrid_q4lut4_*}.mlpackage" \
   --out-dir model_outputs_anime_chain \
   --bw-enhance --bw-depixel 1.2 --bw-sharpness 1.1 --bw-threshold 170 \
   --overlay-black --overlay-name anime2sketch_overlay_black.png --overlay-threshold 170 \
@@ -162,7 +153,7 @@ Build one model package that already includes:
 
 ```bash
 python build_fused_anime_esrgan_model.py \
-  --anime-q4 anime2sketch_xcode_archsame_quant4.mlpackage \
+  --anime-q4 anime2sketch_xcode_linear4.mlpackage \
   --anime-lut4 anime2sketch_xcode_lut4.mlpackage \
   --anime-hybrid anime2sketch_xcode_hybrid_q4lut4_50.mlpackage \
   --esrgan RealESRGAN_x4_quant8.mlpackage \
