@@ -13,21 +13,31 @@ All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS,
 
 You can find each model linked to its release direct link, or navigate to [Releases](https://github.com/marshiyar/CoreML-Model-Zoo/releases) and select your desired model.
 
-Each model’s license follows its original upstream project (linked in the [Footnotes](#Footnotes)).
+Each model’s license follows its original upstream project (linked in the [Footnotes](#footnotes)).
 
 <a id="contents"></a>
+
 <details>
+  
 <summary><strong>Contents</strong></summary>
 
-- [Super Resolution (Real-ESRGAN)](#super-resolution-real-esrgan)
-- [Image Denoising (NAFNet)](#image-denoising-nafnet)
-- [Image Colorization (DDColor)](#image-colorization-ddcolor)
-- [Image2Image (Anime2Sketch)](#image2image-anime2sketch)
+- [Super Resolution](#super-resolution)
+  - [RealESRGAN x2](#realesrgan-x2)
+  - [RealESRGAN x4](#realesrgan-x4)
+- [Image Denoising](#image-denoising)
+  - [NAFNet](#nafnet)
+- [Image Colorization](#image-colorization)
+  - [DDColor](#ddcolor)
+- [Image2Image](#image2image)
+  - [Anime2Sketch](#anime2sketch)
+- [Footnotes](#footnotes)
 
 </details>
 
+<a id="super-resolution"></a>
 # Super Resolution
 
+<a id="realesrgan-x2"></a>
 ## RealESRGAN x2 [^1]
 
 <p align="leading">
@@ -51,6 +61,7 @@ Each model’s license follows its original upstream project (linked in the [Foo
 | [RealESRGAN_x2plus_pal-8&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x2_CoreML/RealESRGAN_x2plus_pal-8.mlpackage.zip) | 16.9 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x2plus_pal-8.png" width="120" /> | pal-8 |
 | [RealESRGAN_x2plus_Q-8&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x2_CoreML/RealESRGAN_x2plus_Q-8.mlpackage.zip) | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x2plus_Q-8.png" width="120" /> | Q-8 |
 
+<a id="realesrgan-x4"></a>
 ### RealESRGAN x4
 
 <p align="leading">
@@ -119,8 +130,10 @@ Tested on MacBook Pro (Apple Silicon M4 Max, 36 GB) running macOS 15.7.2 using X
 
 ---
 
+<a id="image-denoising"></a>
 # Image Denoising
 
+<a id="nafnet"></a>
 ## NAFNet [^2]
 
 <details>
@@ -142,8 +155,10 @@ Tested on MacBook Pro (Apple Silicon M4 Max, 36 GB) running macOS 15.7.2 using X
 
 ---
 
+<a id="image-colorization"></a>
 # Image Colorization
 
+<a id="ddcolor"></a>
 ## DDColor [^4]
 
 <details>
@@ -169,6 +184,8 @@ Tested on MacBook Pro (Apple Silicon M4 Max, 36 GB) running macOS 15.7.2 using X
 
 ---
 
+<a id="image2image"></a>
+<a id="anime2sketch"></a>
 ## Image2Image (Anime2Sketch) [^3]
 
 
@@ -192,10 +209,11 @@ Arshiya Rahgozar
 [GitHub](https://github.com/marshiyar)
 [LinkedIn](https://www.linkedin.com/in/marshiyar/)
 
-## Thanks
+## Attributions
 
 Thanks to the authors of Real-ESRGAN, NAFNet, DDColor, and Anime2Sketch for the original models and code.
 
+<a id="footnotes"></a>
 ## Footnotes
 
 [^1]: Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
