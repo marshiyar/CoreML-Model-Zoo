@@ -72,17 +72,50 @@ Each model’s license follows its original upstream project (linked in the [Foo
 | [RealESRGAN_x4_pal-4&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x4_CoreLM/RealESRGAN_x4_pal-4.mlpackage.zip) | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_pal-4.png" width="120" /> | pal-4 |
 | [RealESRGAN_x4_Q-8&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x4_CoreLM/RealESRGAN_x4_Q-8.mlpackage.zip) | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_Q-8.png" width="120" /> | Q-8 |
 
+
 ### Performance Benchmarks (RealESRGAN x4)
 
-Tested on MacBook Pro macOS 15.7.2 (Apple Silicon M4).
+Tested on MacBook Pro (Apple Silicon M4 Max, 36 GB) running macOS 15.7.2 using Xcode Performance tab with Compute Units: All.
 
-| Model | Size | CPU Ops | ANE Ops | GPU Ops | Median Prediction | Median Load | Median Compile |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **RealESRGAN_x4** (Base) | 34.1 MB | **0** | 955 | 71 | 196.61 ms | 83.41 ms | 197.59 ms |
-| **RealESRGAN_x4_Q-8** | 17.6 MB | **0** | 955 | 71 | 199.74 ms | 94.92 ms | 222.53 ms |
-| **RealESRGAN_x4_pal-4** | 9.2 MB | **0** | 955 | 71 | 199.31 ms | 91.74 ms | 211.87 ms |
+  <details>
+  <summary><strong>Part 1 — Model + device info</strong></summary>
+    
+| Model File Name     | Model Type   | Model Size   | Device Type   | Software Version   |  Compute Units                |
+|:--------------------|:-------------|:-------------|:--------------|:-------------------|:------------------------------|
+| RealESRGAN_x4       | ML Program   | 34.1 MB      | MacBook Pro   | macOS 15.7.2       | All (CPU, GPU, Neural Engine) |
+| RealESRGAN_x4_Q-8   | ML Program   | 17.6 MB      | MacBook Pro   | macOS 15.7.2       | All (CPU, GPU, Neural Engine) |
+| RealESRGAN_x4_pal-4 | ML Program   | 9.2 MB       | MacBook Pro   | macOS 15.7.2       | All (CPU, GPU, Neural Engine) |
 
-Tested with Xcode Performance Tab at *All (CPU, GPU, Neural Engine).* setup
+  </details>
+
+  <details>
+  <summary><strong>Part 2 — Operations</strong></summary>
+
+| Model File Name     |   Neural Engine Operations |   CPU Operations |   GPU Operations | Total Operations   |
+|:--------------------|---------------------------:|-----------------:|-----------------:|:-------------------|
+| RealESRGAN_x4       |                        955 |                0 |               71 | 1,026              |
+| RealESRGAN_x4_Q-8   |                        955 |                0 |               71 | 1,026              |
+| RealESRGAN_x4_pal-4 |                        955 |                0 |               71 | 1,026              |
+
+</details>
+
+<details>
+  <summary><strong>Part 3 — Performance (Prediction / Load / Compile)</strong></summary>
+  
+| Model File Name     | Metric     | Average   | Median   | Minimum   | Maximum   | Uncached   |
+|:--------------------|:-----------|:----------|:---------|:----------|:----------|:-----------|
+| RealESRGAN_x4       | Prediction | 198.62    | 196.61   | 191.82    | 251.10    | 251.10     |
+| RealESRGAN_x4       | Load       | 82.63     | 83.41    | 78.56     | 84.40     | 1,946.85   |
+| RealESRGAN_x4       | Compile    | 199.57    | 197.59   | 195.36    | 205.77    | 195.36     |
+| RealESRGAN_x4_Q-8   | Prediction | 201.30    | 199.74   | 192.94    | 236.59    | 236.59     |
+| RealESRGAN_x4_Q-8   | Load       | 94.53     | 94.92    | 90.93     | 96.17     | 2,399.90   |
+| RealESRGAN_x4_Q-8   | Compile    | 222.40    | 222.53   | 220.22    | 224.45    | 220.22     |
+| RealESRGAN_x4_pal-4 | Prediction | 200.81    | 199.31   | 193.33    | 259.98    | 259.98     |
+| RealESRGAN_x4_pal-4 | Load       | 90.99     | 91.74    | 85.77     | 93.65     | 2,103.96   |
+| RealESRGAN_x4_pal-4 | Compile    | 211.95    | 211.87   | 211.81    | 212.18    | 212.18     |
+
+</details>
+
 
 ---
 
