@@ -1,5 +1,11 @@
 # CoreML-Model-Zoo
 
+<p align="center">
+  <a href="https://huggingface.co/marshiyar">
+    <img alt="HF" src="https://img.shields.io/badge/HF-My_Hugging_Face-yellow?logo=huggingface&logoColor=yellow">
+  </a>
+</p>
+
 A curated collection of CoreML (`.mlpackage`) models
 All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS, and visionOS.
 
@@ -23,6 +29,12 @@ Each model’s license follows its original upstream project (linked in the Foot
 
 ## RealESRGAN x2 [^1]
 
+<p align="leading">
+  <a href="https://huggingface.co/marshiyar/RealESRGAN_x2_CoreML">
+    <img alt="HF" src="https://img.shields.io/badge/HF-RealESRGAN_x2_CoreML-yellow?logo=huggingface&logoColor=yellow">
+  </a>
+</p>
+
 <details>
 <summary><strong>Model contract</strong></summary>
 
@@ -39,6 +51,12 @@ Each model’s license follows its original upstream project (linked in the Foot
 | [RealESRGAN_x2plus_Q-8&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x2_CoreML/RealESRGAN_x2plus_Q-8.mlpackage.zip) | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x2plus_Q-8.png" width="120" /> | Q-8 |
 
 ### RealESRGAN x4
+
+<p align="leading">
+  <a href="https://huggingface.co/marshiyar/RealESRGAN_x4_CoreML">
+    <img alt="HF" src="https://img.shields.io/badge/HF-RealESRGAN_x4_CoreML-yellow?logo=huggingface&logoColor=yellow">
+  </a>
+</p>
 
 <details>
 <summary><strong>Model contract</strong></summary>
