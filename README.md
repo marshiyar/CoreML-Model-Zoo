@@ -49,9 +49,9 @@ Each model’s license follows its original upstream project (linked in the Foot
 
 | Model ID | Size | Input | Output | Profile |
 | ----------------------------------- | ------- | ----- | ------ | ------- |
-| [RealESRGAN_x4&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/untagged-078ed2b03845215ff9c3/RealESRGAN_x4.mlpackage.zip) | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_model_Input1.png" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4.png" width="120" /> | base |
-| [RealESRGAN_x4_pal-4&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/untagged-078ed2b03845215ff9c3/RealESRGAN_x4_pal-4.mlpackage.zip) | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_pal-4.png" width="120" /> | pal-4 |
-| [RealESRGAN_x4_Q-8&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/untagged-078ed2b03845215ff9c3/RealESRGAN_x4_Q-8.mlpackage.zip) | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_Q-8.png" width="120" /> | Q-8 |
+| [RealESRGAN_x4&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x4_CoreLM/RealESRGAN_x4.mlpackage.zip) | 32.5 MB | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_model_Input1.png" width="120" /> | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4.png" width="120" /> | base |
+| [RealESRGAN_x4_pal-4&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x4_CoreLM/RealESRGAN_x4_pal-4.mlpackage.zip) | 8.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_pal-4.png" width="120" /> | pal-4 |
+| [RealESRGAN_x4_Q-8&nbsp;<sup>⬇️</sup>](https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/RealESRGAN_x4_CoreLM/RealESRGAN_x4_Q-8.mlpackage.zip) | 16.8 MB |  | <img src="https://github.com/marshiyar/CoreML-Model-Zoo/releases/download/readme-assets/RealESRGAN_x4_Q-8.png" width="120" /> | Q-8 |
 
 ### Performance Benchmarks (RealESRGAN x4)
 
