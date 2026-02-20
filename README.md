@@ -11,8 +11,9 @@ All models can be added directly to Xcode projects targeting iOS, iPadOS, macOS,
 
 # Quick start
 
-1. You can find each model linked to its realease direct link or navigate to "Releases" and select your wanted Model
-Each model’s license follows its original upstream project (linked in the Footnotes).
+You can find each model linked to its release direct link, or navigate to [Releases](https://github.com/marshiyar/CoreML-Model-Zoo/releases) and select your desired model.
+
+Each model’s license follows its original upstream project (linked in the [Footnotes](#Footnotes)).
 
 <a id="contents"></a>
 <details>
@@ -161,6 +162,8 @@ Arshiya Rahgozar
 ## Thanks
 
 Thanks to the authors of Real-ESRGAN, NAFNet, DDColor, and Anime2Sketch for the original models and code.
+
+## Footnotes
 
 [^1]: Real-world image super-resolution. Original project: [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD-3-Clause).
 
